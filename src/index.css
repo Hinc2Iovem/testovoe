@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+}
+
+:root {
+  --border: #d4defe;
+  --card: #ffffff;
+  --title: #262c40;
+  --description: #8189a3;
+}
+
+@layer utilities {
+  .border {
+    border-color: var(--border);
+  }
+  .card {
+    background-color: var(--card);
+    box-shadow: 0px 0px 20px 0px #0000001a;
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .title {
+    color: var(--title);
+  }
+  .description {
+    color: var(--description);
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgb(var(--description));
+  transition: background-color 5000s ease-in-out 0s;
+}
